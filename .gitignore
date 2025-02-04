@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+/myenv310
+/venv
 
 # testing
 /coverage
