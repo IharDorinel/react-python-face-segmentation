@@ -1,0 +1,8 @@
+{
+    "build": {
+      "builder": "nixpacks",
+      "buildCommand": "cd backend && pip install -r requirements.txt"
+    },
+    "start": "cd backend && gunicorn app:app"
+  }
+  
