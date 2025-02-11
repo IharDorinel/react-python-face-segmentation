@@ -1,6 +1,9 @@
 # Используем Python 3.10
 FROM python:3.10
 
+# Установка библиотеки libGL, необходимой для OpenCV
+RUN apt-get update && apt-get install -y --no-install-recommends libgl1-mesa-glx
+
 # Устанавливаем рабочую директорию
 WORKDIR /app
 

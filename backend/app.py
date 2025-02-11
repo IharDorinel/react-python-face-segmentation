@@ -12,27 +12,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Загрузка модели
-model_path = "../frontend/public/model/model_res.onnx"
+model_path = "model/model_res.onnx"
 session = ort.InferenceSession(model_path)
-
-# Цвета для разных классов (RGB)
-CLASS_COLORS = np.array([
-    [255, 255, 0],     # Класс 0 - Желтый
-    [255, 0, 0],       # Класс 1 - Красный
-    [0, 255, 0],       # Класс 2 - Зеленый
-    [0, 0, 255],       # Класс 3 - Синий
-    [128, 0, 128],     # Класс 4 - Пурпурный
-    [255, 0, 255],     # Класс 5 - Фиолетовый
-    [128, 128, 128],   # Класс 6 - Серый
-    [0, 255, 255],     # Класс 7 - Голубой
-    [128, 128, 0],     # Класс 8 - Оливковый
-    [0, 128, 128],     # Класс 9 - Темно-голубой
-    [0, 0, 0],         # Класс 10 - Черный
-], dtype=np.uint8)
-
-@app.route('/')
-def home():
-    return "Hello, World!"
 
 @app.route('/api/predict', methods=['POST'])
 def process_image():
