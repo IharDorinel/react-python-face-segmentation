@@ -32,7 +32,7 @@ CLASS_COLORS = np.array([
 
 @app.route('/')
 def home():
-    return "Hello, World!"
+    return "Backend Server"
 
 @app.route('/api/predict', methods=['POST'])
 def process_image():
